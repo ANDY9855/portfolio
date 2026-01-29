@@ -311,6 +311,10 @@
             <div class="icon-img">📄</div>
             <div class="icon-text">Resume.pdf</div>
         </div>
+         <div class="desktop-icon" ondblclick="openWindow('Games')" onclick="handleMobile('Games')">
+            <div class="icon-img">🎮</div>
+            <div class="icon-text">Games</div>
+        </div>
         <div class="desktop-icon" ondblclick="openWindow('contact')" onclick="handleMobile('contact')">
             <div class="icon-img">📧</div>
             <div class="icon-text">Contact</div>
@@ -362,6 +366,10 @@
         <div class="start-item" onclick="openYoutube(); toggleStartMenu()">
             <div class="start-icon">▶️</div>
             <div>YouTube</div>
+        </div>
+          <div class="start-item" onclick="openWindow('Games'); toggleStartMenu()">
+            <div class="start-icon">🎮</div>
+            <div>Game</div>
         </div>
         <div class="start-separator"></div>
         <div class="start-item" onclick="openWindow('skills'); toggleStartMenu()">
@@ -522,9 +530,9 @@ function openWindow(type) {
     const id = 'window-' + windowCount;
     zIndex++;
     
-    let windowTitle = { 'projects': 'My Projects', 'chrome': 'Google Chrome', 'contact': 'Contact', 'skills': 'My Skills', 'moiz9855': 'Moiz9855', 'andy9855': 'Andy9855', 'komiwatch': 'KomiWatch', 'campus': 'Campus Connect', 'Nexus': 'Nexus', 'jobjunction': 'Job-Junction', 'valentines': 'Valentines', 'valentine': 'Valentine', 'birthday': 'Her-Birthday', 'pookie': 'Pookie' }[type] || 'Window';
+    let windowTitle = { 'projects': 'My Projects','Games':'game', 'chrome': 'Google Chrome', 'contact': 'Contact', 'skills': 'My Skills', 'moiz9855': 'Moiz9855', 'andy9855': 'Andy9855', 'komiwatch': 'KomiWatch', 'campus': 'Campus Connect', 'Nexus': 'Nexus', 'jobjunction': 'Job-Junction', 'valentines': 'Valentines', 'valentine': 'Valentine', 'birthday': 'Her-Birthday', 'pookie': 'Pookie' }[type] || 'Window';
     
-    let icon = { 'projects': '📁', 'chrome': '🌐', 'contact': '📧', 'skills': '⚡', 'moiz9855': '👤', 'andy9855': '👨‍💻', 'komiwatch': '🎬', 'campus': '🎓', 'Nexus': '🔗', 'jobjunction': '💼', 'valentines': '💝', 'valentine': '❤️', 'birthday': '🎂', 'pookie': '🐻' }[type] || '📄';
+    let icon = { 'projects': '📁','Games': '🎮', 'chrome': '🌐', 'contact': '📧', 'skills': '⚡', 'moiz9855': '👤', 'andy9855': '👨‍💻', 'komiwatch': '🎬', 'campus': '🎓', 'Nexus': '🔗', 'jobjunction': '💼', 'valentines': '💝', 'valentine': '❤️', 'birthday': '🎂', 'pookie': '🐻' }[type] || '📄';
     
     const isMobile = window.innerWidth <= 768;
     const windowDiv = document.createElement('div');
@@ -565,8 +573,7 @@ function openWindow(type) {
         </div>`;
     } else if (type === 'moiz9855') {
         content = `<div class="folder-grid">
-            <div class="folder-item" onclick="openProject('https://moiz9855.github.io/valentines/')"><div class="folder-icon">💝</div><div class="folder-name">Valentines</div></div>
-            <div class="folder-item" onclick="openProject('https://moiz9855.github.io/valentine/')"><div class="folder-icon">❤️</div><div class="folder-name">Valentine</div></div>
+           
             <div class="folder-item" onclick="openProject('https://moiz9855.github.io/her-birthday/')"><div class="folder-icon">🎂</div><div class="folder-name">Her-Birthday</div></div>
             <div class="folder-item" onclick="openProject('https://moiz9855.github.io/pookie/')"><div class="folder-icon">🐻</div><div class="folder-name">Pookie</div></div>
         </div>`;
@@ -576,6 +583,11 @@ function openWindow(type) {
             <div class="folder-item" onclick="openProject('https://andy9855.github.io/campus-connect/')"><div class="folder-icon">🎓</div><div class="folder-name">Campus Connect</div></div>
             <div class="folder-item" onclick="openProject('https://andy9855.github.io/Nexus/')"><div class="folder-icon">🔗</div><div class="folder-name">Nexus</div></div>
            
+        </div>`;
+          } else if (type === 'Games') {
+        content = `<div class="folder-grid">
+            <div class="folder-item" onclick="openProject('https://moiz9855.github.io/valentines/')"><div class="folder-icon">💝</div><div class="folder-name">Valentines</div></div>
+            <div class="folder-item" onclick="openProject('https://moiz9855.github.io/valentine/')"><div class="folder-icon">❤️</div><div class="folder-name">Valentine</div></div>
         </div>`;
     } else if (type === 'skills') {
         content = `<div class="skills-container">
